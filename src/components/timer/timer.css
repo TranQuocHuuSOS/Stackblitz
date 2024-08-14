@@ -1,0 +1,17 @@
+.timer-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* khoảng cách giữa title và timer display */
+    margin: 20px 0;
+  }
+  
+  .timer-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .timer-display {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  

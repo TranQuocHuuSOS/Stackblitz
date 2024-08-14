@@ -1,0 +1,34 @@
+.input-number-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  
+  .input-number-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .input-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .input-field {
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    width: 200px;
+    box-sizing: border-box;
+  }
+  input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}

@@ -1,0 +1,47 @@
+.game-screen-container {
+    max-width: 600px; 
+    height: 400px;  
+    position: relative;
+    background-color: #ffffff;
+    border: 2px solid #ccc;   
+    border-radius: 8px;      
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-size: 24px; 
+    color: #333;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    border: 1px solid #000;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+  }
+  
+  .circle:hover {
+    background-color: #667DFF;
+    color: #FFFFFF;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .highlighted {
+    background-color: green;
+    color: #fff;
+  }
+  
