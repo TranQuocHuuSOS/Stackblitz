@@ -10,13 +10,12 @@ const Header = ({
   onNumberChange,
   resetTime,
   setResetTime,
-  hasStarted,
-  error, success
+  hasStarted
 }) => {
   return (
     <div className="header">
       <div className="header-values">
-        <h1> {error ? "GAME OVER" : success ? "ALL CLEARED" : "LET'S PLAY"}</h1>
+        <h1>LET'S PLAY</h1>
       </div>
       <div className="header-values">
         <InputNumber value={number} onChange={onNumberChange} />

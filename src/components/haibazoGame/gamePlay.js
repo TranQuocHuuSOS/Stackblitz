@@ -54,8 +54,7 @@ const GamePlay = () => {
         resetTime={resetTime}
         setResetTime={setResetTime}
         hasStarted={hasStarted}
-        error={error}
-        success={success}
+      
       />
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       {error && <div className="error-message">{error}</div>}
