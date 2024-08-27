@@ -1,6 +1,5 @@
 import React from "react";
 import "./inputNumber.css";
-
 const InputNumber = ({ value, onChange }) => {
   return (
     <div className="input-number-container">
@@ -17,5 +16,4 @@ const InputNumber = ({ value, onChange }) => {
     </div>
   );
 };
-
 export default InputNumber;

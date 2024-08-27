@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import Header from "../header/header";
 import "./haibazo.css";
 import GameScreen from "../gameScreen/gameScreen";
-
 const GamePlay = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [inputValue, setInputValue] = useState(0);
   const [number, setNumber] = useState(0);
   const [lastNumber, setLastNumber] = useState(0);
   const [resetTime, setResetTime] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [hasStarted, setHasStarted] = useState(false);
   const handlePlayRestart = () => {
     if (inputValue <= 0) {
       setErrorMessage("Vui lòng nhập số lớn hơn 0");
@@ -23,26 +22,28 @@ const GamePlay = () => {
     setNumber(newNumber);
     setLastNumber(newNumber);
     setResetTime(true);
-    setGameOver(false);
     setError("");
     setSuccess(false);
     setErrorMessage("");
+    setHasStarted(true);
+    if (success || error) {
+      setHasStarted(false);
+      setTimeout(() => {
+        setHasStarted(true);
+      }, 0);
+    }
   };
-
   const handleNumberChange = (e) => {
     setInputValue(Number(e.target.value) || 0);
   };
-
   const handleGameOver = (status) => {
     setIsPlaying(false);
-    setGameOver(status);
     if (status) {
       setSuccess(true);
     } else {
       setError("GAME OVER");
     }
   };
-
   return (
     <div className="gameplay-container">
       <Header
@@ -52,6 +53,9 @@ const GamePlay = () => {
         onNumberChange={handleNumberChange}
         resetTime={resetTime}
         setResetTime={setResetTime}
+        hasStarted={hasStarted}
+        error={error}
+        success={success}
       />
       {errorMessage && <div className="error-message">{errorMessage}</div>}
       {error && <div className="error-message">{error}</div>}
@@ -60,9 +64,9 @@ const GamePlay = () => {
         number={number}
         onGameOver={handleGameOver}
         reset={resetTime}
+        hasStarted={isPlaying}
       />
     </div>
   );
 };
-
 export default GamePlay;

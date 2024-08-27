@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./timer.css";
-
 const Timer = ({ isPlaying, resetTime, setResetTime }) => {
   const [time, setTime] = useState(0.0);
-
   useEffect(() => {
     let interval;
     if (isPlaying) {
@@ -19,7 +17,6 @@ const Timer = ({ isPlaying, resetTime, setResetTime }) => {
     }
     return () => clearInterval(interval);
   }, [isPlaying, resetTime, setResetTime]);
-
   return (
     <div className="timer-container">
       <span className="timer-title">Timer:</span>
@@ -27,5 +24,4 @@ const Timer = ({ isPlaying, resetTime, setResetTime }) => {
     </div>
   );
 };
-
 export default Timer;
